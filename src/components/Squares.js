@@ -44,7 +44,8 @@ export default function Squares() {
       document.querySelector(`#${id}`).classList.toggle('active');
     } else {
       setActiveSquare(id);
-      document.querySelector('.square.active').classList.toggle('active');
+      let theSquare = document.querySelector('.square.active');
+      if (theSquare) theSquare.classList.toggle('active');
       document.querySelector(`#${id}`).classList.toggle('active');
     }
   };
