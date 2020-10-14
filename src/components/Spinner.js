@@ -19,12 +19,12 @@ STEP 0:
 
 STEP 1:
   Create a 'spinnerOn', 'setSpinnerOn' pair of variables using the state hook.
-  The 'spinnerOn' should be initialized to true if you want the spinner to be visible on page load, false otherwise.
+  The 'spinnerOn' slice should be initialized to true so the spinner is visible on page load.
 
 STEP 2:
   This is called a logical expression. If the expressions on both sides of the '&&' are truthy,
-  the one on the right becomes the value of the whole line. If the expression on the left of the '&&'
-  is falsy, this thing on the left becomes the value of the whole line. It's a neat little trick to render
+  the one on the right becomes the value of the whole line. If an expression on either side of the '&&'
+  is falsy, the one on the left becomes the value of the whole line. It's a neat little trick to render
   a React element (in this case the spinner) conditionally: only if the variable on the left is truthy.
 
   Replace the hard-coded 'true' with the variable that keeps track of whether spinner is on or not.
@@ -40,19 +40,21 @@ STEP 4:
 import React from 'react'; /* STEP 0 */
 
 export default function Spinner() {
-  /* STEP 1 */
+/* STEP 1 */
 
   const toggleSpinner = () => {
-    /* STEP 4 */
+  /* STEP 4 */
   };
 
   return (
     <div className='widget-spinner container'>
       <h2>Spinner</h2>
       {
-        true && <div className='spinner'>--+--</div> /* STEP 2 */
+        true && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
       }
-      <button onClick={toggleSpinner}>Hide Spinner</button> {/* STEP 3 */}
+      <button id='toggleSpinner' onClick={toggleSpinner}>
+        Hide Spinner {/* STEP 3 */}
+      </button>
     </div>
   );
 }
